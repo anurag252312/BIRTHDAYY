@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Envelope Surprise</title>
+    <style>body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Envelope Container */
+.envelope-container {
+    position: relative;
+    width: 320px;
+    height: 250px;
+    margin: 50px auto;
+    cursor: pointer;
+}
+
+/* Envelope Body */
+.envelope {
+    position: absolute;
+    width: 100%;
+    height: 180px;
+    bottom: 0;
+    background: #ff4081;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Envelope Flap (Opens Up) */
+.flap {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 160px solid transparent;
+    border-right: 160px solid transparent;
+    border-bottom: 100px solid #d81b60;
+    top: -100px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: transform 0.5s ease-in-out;
+    transform-origin: top;
+}
+
+/* Letter Inside Envelope */
+.letter {
+    position: absolute;
+    width: 280px;
+    height: 160px;
+    background: white;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80%);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.letter h2 {
+    color: #d81b60;
+}
+
+.letter p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Friend's Photo */
+.friend-photo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 3px solid #ff4081;
+}
+
+/* Opening Animation */
+.open-flap {
+    transform: rotateX(180deg);
+}
+
+.show-letter {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}</style>
+</head>
+<body>
+
+    <h1>🎉 Click the Envelope to Reveal Your Birthday Surprise! 🎉</h1>
+    
+    <div class="envelope-container" onclick="openEnvelope()">
+        <div class="envelope">
+            <div class="flap"></div>
+            <div class="body"></div>
+        </div>
+        <div class="letter">
+            <img src="file:///C:/Users/Friends/Desktop/SHIVANI/p3.jpg" alt="Happy Birthday" class="friend-photo">
+            <b>💖 Happy Birthday Sweety di! 💖<b/>
+            <p>May your life be filled with joy, love, and success!  
+            Wishing you all the happiness in the world! 🎂✨
+			<h6>and You are the most caring girl 
+             Kabhe Bengal le chlo kala jadu sikha denaa 😂</h6></p>
+        </div>
+    </div>
+
+    <script>
+        function openEnvelope() {
+            document.querySelector('.flap').classList.toggle('open-flap');
+            document.querySelector('.letter').classList.toggle('show-letter');
+        }
+    </script>
+
+</body>
+</html>
